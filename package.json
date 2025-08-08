@@ -1,6 +1,6 @@
 {
   "name": "controla",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "Control everythings",
   "keywords": [
     "abort",
@@ -18,10 +18,11 @@
   },
   "type": "module",
   "main": "./dist/lib.js",
+  "types": "./dist/lib.d.ts",
   "exports": {
     ".": {
       "import": {
-        "types": "./dist/.d.ts",
+        "types": "./dist/lib.d.ts",
         "default": "./dist/lib.js"
       },
       "require": {
@@ -35,6 +36,9 @@
     "test": "vitest",
     "format": "NODE_OPTIONS='--experimental-strip-types' prettier . --write"
   },
+  "files": [
+    "dist"
+  ],
   "devDependencies": {
     "@types/node": "^24.2.0",
     "pkgroll": "^2.15.1",
