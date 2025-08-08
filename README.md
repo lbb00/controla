@@ -22,12 +22,14 @@ npm install controla
 ```ts
 import { controlAsyncFunction } from 'controla'
 
+const outerAbortController = new AbortController()
+
 const { run, abort } = controlAsyncFunction(
   async ({ signal }) => {
     return 'Hello, world!'
   },
   {
-    signal, // Optional, AbortSignal
+    signal: outerAbortController.signal, // Optional, AbortSignal
     timeout, // Optional, ms
   }
 )
