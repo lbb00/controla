@@ -1,4 +1,4 @@
-import { controlAsyncFunction } from 'controla'
+import { controlAsyncFunction } from './control-async-function.js'
 
 export function controlSingleFlight<
   T extends (args: { signal?: AbortSignal }) => Promise<R>,
@@ -16,7 +16,7 @@ export function controlSingleFlight<
     onFlightError,
     onFlightSuccess,
   }: {
-    timeout: number
+    timeout?: number
     idleReleaseTime?: number
     idleOnSuccessOnly?: boolean
     abortFlightIfRelease?: boolean
@@ -25,7 +25,7 @@ export function controlSingleFlight<
     onFlightSuccess?: (res: R) => void
     onFlightError?: (err: Error) => void
     onFlightEnd?: () => void
-  }
+  }={}
 ) {
   let activeFlight: Promise<[Error | undefined, R | undefined]> | undefined
   let activeController: AbortController | undefined

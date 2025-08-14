@@ -1,6 +1,6 @@
 {
   "name": "controla",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Control everythings",
   "keywords": [
     "abort",
@@ -8,7 +8,8 @@
     "AbortSignal",
     "timeout",
     "promise",
-    "async function"
+    "async function",
+    "single flight"
   ],
   "license": "UNLICENSE (HTTP://UNLICENSE.ORG/)",
   "author": "lbb00",
